@@ -38,4 +38,10 @@ public class FunnyAlgorithmsTest {
 		System.out.println("Test of number in range [-32768, 32767]");
 		f.stringToIntConverter("32768");
 	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void illegalNumberTest() {
+		System.out.println("Test of illegal number (like A3, 2.3, 2 3, ...)");
+		f.stringToIntConverter("A3");
+	}
 }
