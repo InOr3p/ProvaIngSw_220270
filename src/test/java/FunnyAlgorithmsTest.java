@@ -5,6 +5,7 @@ import Application.FunnyAlgorithms;
 public class FunnyAlgorithmsTest {
 	
 	private FunnyAlgorithms f = new FunnyAlgorithms();
+		
 	
 	@BeforeClass
 	public static void beforeClass() {
@@ -30,5 +31,11 @@ public class FunnyAlgorithmsTest {
 	public void numberTest() {
 		System.out.println("Test with number 123");
 		assertEquals(123, f.stringToIntConverter("123"));
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void numberInRangeTest() {
+		System.out.println("Test of number in range [-32768, 32767]");
+		f.stringToIntConverter("32768");
 	}
 }
