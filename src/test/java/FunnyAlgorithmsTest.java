@@ -51,4 +51,14 @@ public class FunnyAlgorithmsTest {
 		System.out.println("Test of order != 0 and order != 1 in selection sort");
 		f.selectionSort(array, 3);
 	}
+	
+	@Test
+	public void orderedArrayTest() {   // test 5
+		int size = 6;
+		int array[] =  {4,3,5,1,2,6};
+		int orderedArray[] = {1,2,3,4,5,6}; 
+		System.out.println("array [4,3,5,1,2,6] is ordered");
+		f.selectionSort(array, 0);
+		assertArrayEquals(orderedArray, array);
+	}
 }
