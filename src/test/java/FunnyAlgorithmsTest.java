@@ -28,20 +28,27 @@ public class FunnyAlgorithmsTest {
 	}
 	
 	@Test
-	public void numberTest() {
+	public void numberTest() {  // test 1
 		System.out.println("Test with number 123");
 		assertEquals(123, f.stringToIntConverter("123"));
 	}
 	
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expected = IllegalArgumentException.class)  // test 2
 	public void numberInRangeTest() {
 		System.out.println("Test of number in range [-32768, 32767]");
 		f.stringToIntConverter("32768");
 	}
 	
-	@Test(expected = IllegalArgumentException.class)
+	@Test(expected = IllegalArgumentException.class)  // test 3
 	public void illegalNumberTest() {
 		System.out.println("Test of illegal number (like A3, 2.3, 2 3, ...)");
 		f.stringToIntConverter("A3");
+	}
+	
+	@Test(expected = IllegalArgumentException.class)  // test 4
+	public void illegalOrderTest() {
+		int array[] = {1,2,3,4,5}; 
+		System.out.println("Test of order != 0 and order != 1 in selection sort");
+		f.selectionSort(array, 3);
 	}
 }
